@@ -34,7 +34,7 @@ function UserResults() {
                     {
                         users.map(( user ) => (                          
                             <UserCard
-                                // key={ user.id }
+                                key={ user.id }
                                 user={ user }
                             />  
                         ))
