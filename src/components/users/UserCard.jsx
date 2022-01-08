@@ -1,0 +1,33 @@
+import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+
+function UserCard({ user : { login, avatar_url } }) {
+    return (
+        <div>
+            <div className="card shadow-md compact side bg-base-100">
+                <div className="flex-row items-center space-x-4 card-body">
+                    <div className="">
+                        <div className="avatar">
+                            <div className="rounded-full shadow w-14 h-14">
+                                <img src={avatar_url} alt={`Profile picture of user ${login}`} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="">
+                        <h2 className="card-title">
+                            <Link className="text-base-content text-opacity-40" to={`/users/${login}`}>
+                                Visit Profile
+                            </Link>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+UserCard.propTypes = {
+    user: PropTypes.object.isRequired
+}
+
+export default UserCard
